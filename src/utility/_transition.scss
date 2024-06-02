@@ -1,0 +1,65 @@
+@mixin mixin-transition-class() {
+
+    .trsn {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .trsn-none {
+        transition-property: none
+    }
+
+    .trsn-all {
+        transition-property: all;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .trsn-color {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .trsn-opacity {
+        transition-property: opacity;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .trsn-shadow {
+        transition-property: box-shadow;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+    }
+
+    .trsn-form {
+        transition-property: transform;
+        transition-duration: 150ms;
+        transition-timing-function: ease-in-out;
+    }
+}
+
+@mixin mixin-transition($breakpoint: null) {
+
+    [style*="--tn#{$breakpoint}:"] {
+        transition: var(--tn#{$breakpoint})
+    }
+
+    [style*="--tnde#{$breakpoint}:"] {
+        transition-delay: var(--tnde#{$breakpoint})
+    }
+
+    [style*="--tndu#{$breakpoint}:"] {
+        transition-duration: var(--tndu#{$breakpoint})
+    }
+
+    [style*="--tnpr#{$breakpoint}:"] {
+        transition-property: var(--tnpr#{$breakpoint})
+    }
+
+    [style*="--tntf#{$breakpoint}:"] {
+        transition-timing-function: var(--tntf#{$breakpoint})
+    }
+}

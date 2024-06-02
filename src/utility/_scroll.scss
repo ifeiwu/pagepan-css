@@ -1,0 +1,21 @@
+@mixin mixin-scroll-class() {
+    .scroll-x {
+        overflow-x: auto;
+        white-space: nowrap;
+        overscroll-behavior: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .scroll-x::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scroll-x > * {
+        min-width: max-content
+    }
+
+    .scrollbar-hidden {
+        overflow: hidden;
+        width: calc(100vw - var(--scrollbar-width));
+    }
+}

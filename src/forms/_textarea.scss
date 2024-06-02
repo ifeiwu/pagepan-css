@@ -1,0 +1,4 @@
+.form-textarea {
+    @extend %form-input-default;
+    padding: .5rem .75rem;
+}

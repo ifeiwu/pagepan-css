@@ -1,0 +1,37 @@
+@mixin mixin-height($breakpoint: null) {
+
+    @each $name, $value in $percentage {
+        .h-#{$name}#{$breakpoint} {
+            height: #{$value}
+        }
+    }
+
+    @each $name, $value in (auto:auto, full:100%, screen:100vh) {
+        .h-#{$name}#{$breakpoint} {
+            height: #{$value}
+        }
+    }
+
+    @for $i from 0 through 30 {
+        $spacer: nth($spacers, $i + 1);
+        .h-#{$i}#{$breakpoint} {
+            height: #{$spacer};
+        }
+    }
+
+    .h-grow#{$breakpoint} {
+        height: calc(100% - var(--offset-top, 0px))
+    }
+
+    [style*="--h#{$breakpoint}:"] {
+        height: var(--h#{$breakpoint})
+    }
+
+    [style*="--maxh#{$breakpoint}:"] {
+        max-height: var(--maxh#{$breakpoint})
+    }
+
+    [style*="--minh#{$breakpoint}:"] {
+        min-height: var(--minh#{$breakpoint})
+    }
+}

@@ -1,0 +1,36 @@
+@mixin mixin-width($breakpoint: null) {
+
+    @each $name, $value in (auto:auto, full:100%, screen:100vw, min:min-content, max:max-content, fit:fit-content, 0:0) {
+        .w-#{$name}#{$breakpoint} {
+            width: #{$value}
+        }
+    }
+
+    @for $i from 0 through 30 {
+        $spacer: nth($spacers, $i + 1);
+        .w-#{$i}#{$breakpoint} {
+            width: #{$spacer};
+        }
+    }
+
+    .w-expand-screen#{$breakpoint} {
+        width: calc(100vw - var(--scrollbar-width) / 2);
+        margin-left: calc((100% - 100vw) / 2)
+    }
+
+    .w-expand-right#{$breakpoint} {
+        width: calc(100vw - (100vw - 100%) / 2)
+    }
+
+    [style*="--w#{$breakpoint}:"] {
+        width: var(--w#{$breakpoint})
+    }
+
+    [style*="--maxw#{$breakpoint}:"] {
+        max-width: var(--maxw#{$breakpoint})
+    }
+
+    [style*="--minw#{$breakpoint}:"] {
+        min-width: var(--minw#{$breakpoint})
+    }
+}

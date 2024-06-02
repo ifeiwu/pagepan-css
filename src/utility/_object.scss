@@ -1,0 +1,22 @@
+@mixin mixin-object($breakpoint: null) {
+
+    @each $value in (contain, cover, fill, none) {
+        .obj-#{$value}#{$breakpoint} {
+            object-fit: $value
+        }
+    }
+
+    @each $value in (center, bottom, top, left, right) {
+        .obj-#{$value}#{$breakpoint} {
+            object-position: $value
+        }
+    }
+
+    [style*="--objf#{$breakpoint}:"] {
+        object-fit: var(--objf#{$breakpoint})
+    }
+
+    [style*="--objp#{$breakpoint}:"] {
+        object-position: var(--objp#{$breakpoint})
+    }
+}

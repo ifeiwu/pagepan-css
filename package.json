@@ -1,0 +1,22 @@
+{
+    "name": "css.pagepan.com",
+    "version": "1.0.0",
+    "source": [
+        "src/pagepan.scss",
+        "src/pagepan-all.scss",
+        "src/pagepan-xl.scss",
+        "src/pagepan-lg.scss",
+        "src/pagepan-md.scss",
+        "src/pagepan-sm.scss"
+    ],
+    "browserslist": "> 0.5%, last 10 versions, not dead",
+    "scripts": {
+        "start": "parcel",
+        "watch": "parcel watch",
+        "build": "parcel build --no-source-maps",
+        "build-ui": "parcel build ./src/pagepan-all.scss --no-source-maps --dist-dir ../ui.pagepan.com/src/assets/css"
+    },
+    "devDependencies": {
+        "parcel": "^2.12.0"
+    }
+}

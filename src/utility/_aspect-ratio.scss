@@ -1,0 +1,12 @@
+@mixin mixin-aspect-ratio($breakpoint: null) {
+
+    @each $name, $value in (auto:'auto', square:'1/1', video:'16/9') {
+        .aspect-#{$name}#{$breakpoint} {
+            aspect-ratio: #{$value}
+        }
+    }
+
+    [style*="--aspect#{$breakpoint}:"] {
+        aspect-ratio: var(--aspect#{$breakpoint})
+    }
+}

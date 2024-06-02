@@ -1,0 +1,36 @@
+.form-range,
+.form-range::-webkit-slider-runnable-track,
+.form-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-range {
+    display: block;
+    cursor: pointer;
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background-color: var(--mix-30);
+    height: 4px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+    border-radius: 100%;
+    background-color: var(--mix-5);
+    height: 15px;
+    width: 15px;
+    margin-top: -6px;
+    transition: box-shadow .1s, background-color .1s;
+}
+
+.form-range:hover::-webkit-slider-thumb {
+    background-color: var(--mix);
+}
+
+.form-range:active::-webkit-slider-thumb {
+    background-color: var(--prim);
+    box-shadow: 0 0 0 1px var(--prim);
+}

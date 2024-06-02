@@ -1,0 +1,15 @@
+progress {
+    display: inline-block;
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    background-color: var(--mix-35);
+}
+
+progress::-webkit-progress-bar {
+    background-color: var(--mix-35);
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--prim);
+}

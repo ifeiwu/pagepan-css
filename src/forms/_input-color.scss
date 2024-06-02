@@ -1,0 +1,13 @@
+.form-color {
+    padding: 0;
+    outline: none;
+    height: 3rem;
+}
+
+.form-color::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.form-color::-webkit-color-swatch {
+    border: 0;
+}

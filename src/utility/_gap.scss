@@ -1,0 +1,22 @@
+@mixin mixin-gap($breakpoint: null) {
+
+    @for $i from 0 through 20 {
+        $spacer: nth($spacers, $i + 1);
+
+        .gap-#{$i}#{$breakpoint} {
+            gap: #{$spacer};
+        }
+
+        .gap-y-#{$i}#{$breakpoint} {
+            row-gap: #{$spacer};
+        }
+
+        .gap-x-#{$i}#{$breakpoint} {
+            column-gap: #{$spacer};
+        }
+    }
+
+    [style*="--gap#{$breakpoint}:"] {
+        gap: var(--gap#{$breakpoint})
+    }
+}

@@ -1,0 +1,46 @@
+@mixin mixin-container-class() {
+
+    .container {
+        --gutter-x: #{$container-spacer};
+        --gutter-y: 0;
+        container-type: inline-size;
+        padding-right: var(--gutter-x);
+        padding-left: var(--gutter-x);
+        margin-right: auto;
+        margin-left: auto;
+        min-height: 100%;
+    }
+
+    .container-xs {
+        max-width: 480px
+    }
+
+    .container-sm {
+        max-width: 560px
+    }
+
+    .container-md {
+        max-width: 768px
+    }
+
+    .container-lg {
+        max-width: 1024px
+    }
+
+    .container-xl {
+        max-width: 1280px
+    }
+
+    .container-2xl {
+        max-width: 1440px
+    }
+
+    .container-3xl {
+        max-width: 1680px
+    }
+
+    .container-fluid {
+        container-type: inline-size;
+        max-width: 100%
+    }
+}

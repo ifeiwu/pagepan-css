@@ -1,0 +1,8 @@
+@mixin mixin-heading($breakpoint: null) {
+
+    @each $key, $value in $heading {
+        .h#{$key}#{$breakpoint} {
+            font-size: #{$value}rem
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@mixin mixin-text-class() {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        line-height: 1.15;
+    }
+
+    @each $key, $value in $heading {
+        h#{$key} {
+            font-size: #{$value}rem
+        }
+    }
+
+    .big {
+        font-size: 120%;
+    }
+
+    .small {
+        font-size: 80%;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .normal {
+        font-weight: normal;
+    }
+
+    .italic {
+        font-style: italic;
+    }
+
+    .truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .underline {
+        text-decoration: underline;
+        text-underline-offset: 0.25em;
+    }
+
+    .linethrough {
+        text-decoration: line-through;
+    }
+
+    .lowercase {
+        text-transform: lowercase;
+    }
+
+    .uppercase {
+        text-transform: uppercase;
+    }
+
+    .capitalize {
+        text-transform: capitalize;
+    }
+
+    .gradient {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

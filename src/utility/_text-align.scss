@@ -1,0 +1,12 @@
+@mixin mixin-text-align($breakpoint: null) {
+
+    @each $value in (left, right, center, justify) {
+        .#{$value}#{$breakpoint} {
+            text-align: $value
+        }
+    }
+
+    [style*="--ts#{$breakpoint}:"] {
+        text-shadow: var(--ts#{$breakpoint})
+    }
+}

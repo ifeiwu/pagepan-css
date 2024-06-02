@@ -1,0 +1,58 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .375rem .75rem;
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: 1;
+    appearance: none;
+    border: none;
+    white-space: nowrap;
+    outline: none;
+    cursor: pointer;
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+}
+
+.btn:disabled {
+    opacity: .45;
+    pointer-events: none;
+    cursor: auto;
+}
+
+.btn-mix {
+    background-color: var(--mix);
+    color: var(--mix-40);
+
+    &:hover,
+    &:focus {
+        background-color: var(--mix-5);
+    }
+}
+
+.btn-prim {
+    background-color: var(--prim);
+    color: var(--prim-20);
+
+    &:hover,
+    &:focus {
+        background-color: var(--prim-3);
+    }
+}
+
+.btn-default {
+    background-color: var(--mix-38);
+    color: var(--mix);
+
+    &:hover,
+    &:focus {
+        background-color: var(--mix-36);
+    }
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}

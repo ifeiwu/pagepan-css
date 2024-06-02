@@ -1,0 +1,9 @@
+@mixin mixin-clear() {
+
+  .clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+
+}

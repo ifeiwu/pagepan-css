@@ -1,0 +1,8 @@
+@mixin mixin-white-space($breakpoint: null) {
+
+    @each $name, $value in (wrap: normal, nowrap: nowrap) {
+        .#{$name}#{$breakpoint} {
+            white-space: $value
+        }
+    }
+}

@@ -1,0 +1,58 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row > * {
+    flex-shrink: 0;
+    flex-basis: 100%;
+}
+
+
+@mixin mixin-row($breakpoint: null) {
+
+    @for $i from 0 through 10 {
+        .row-#{$i}#{$breakpoint},
+        .row-x-#{$i}#{$breakpoint} {
+            margin-right: calc(-.5 * var(--gutter) * $i * -1);
+            margin-left: calc(-.5 * var(--gutter) * $i * -1);
+        }
+
+        .row-#{$i}#{$breakpoint} > .col,
+        .row-#{$i}#{$breakpoint} > [class*="col-"],
+        .row-x-#{$i}#{$breakpoint} > .col,
+        .row-x-#{$i}#{$breakpoint} > [class*="col-"] {
+            padding-right: calc(.5 * var(--gutter) * $i);
+            padding-left: calc(.5 * var(--gutter) * $i);
+        }
+
+        .row-#{$i}#{$breakpoint},
+        .row-y-#{$i}#{$breakpoint} {
+            margin-top: calc(var(--gutter) * 2 * $i * -1);
+        }
+
+        .row-#{$i}#{$breakpoint} > .col,
+        .row-#{$i}#{$breakpoint} > [class*="col-"],
+        .row-y-#{$i}#{$breakpoint} > .col,
+        .row-y-#{$i}#{$breakpoint} > [class*="col-"] {
+            margin-top: calc(var(--gutter) * 2 * $i);
+        }
+    }
+}
+
+@mixin mixin-row-col($breakpoint: null) {
+
+    .col#{$breakpoint} {
+        flex-basis: 0%;
+    }
+
+    .col-auto#{$breakpoint} {
+        flex-basis: auto;
+    }
+
+    @for $i from 0 through $grid-columns {
+        .col-#{$i}#{$breakpoint} {
+            flex-basis: calc($i / $grid-columns) * 100%;
+        }
+    }
+}

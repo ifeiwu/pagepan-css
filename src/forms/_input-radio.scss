@@ -1,0 +1,14 @@
+.form-radio {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    background-color: var(--mix-36);
+}
+
+.form-radio {
+    border-radius: 16px;
+}
+
+.form-radio:checked {
+    background-color: var(--prim);
+}

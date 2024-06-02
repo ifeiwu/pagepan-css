@@ -1,0 +1,36 @@
+%form-input-default {
+    line-height: normal;
+    width: 100%;
+    border: 2px solid var(--mix-35);
+    appearance: none;
+    border-radius: 0;
+    outline: none;
+    white-space: nowrap;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    &:focus {
+        border-color: var(--mix-30);
+    }
+
+    &:hover {
+        border-color: var(--mix-30);
+    }
+}
+
+%form-input-disabled {
+    opacity: .45;
+    pointer-events: none;
+    cursor: auto;
+}
+
+@import "forms/input-checkbox.scss";
+@import "forms/input-color.scss";
+@import "forms/input-file.scss";
+@import "forms/input-radio.scss";
+@import "forms/input-range.scss";
+@import "forms/input-search.scss";
+@import "forms/input-text.scss";
+@import "forms/progress.scss";
+@import "forms/select.scss";
+@import "forms/textarea.scss";
+@import "forms/button.scss";

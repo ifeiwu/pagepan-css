@@ -1,0 +1,60 @@
+@mixin mixin-padding($breakpoint: null) {
+
+    @for $i from 0 through 30 {
+        $spacer: nth($spacers, $i + 1);
+
+        .p-#{$i}#{$breakpoint} {
+            padding: #{$spacer};
+        }
+
+        .pt-#{$i}#{$breakpoint},
+        .py-#{$i}#{$breakpoint} {
+            padding-top: #{$spacer};
+        }
+
+        .pr-#{$i}#{$breakpoint},
+        .px-#{$i}#{$breakpoint} {
+            padding-right: #{$spacer};
+        }
+
+        .pb-#{$i}#{$breakpoint},
+        .py-#{$i}#{$breakpoint} {
+            padding-bottom: #{$spacer};
+        }
+
+        .pl-#{$i}#{$breakpoint},
+        .px-#{$i}#{$breakpoint} {
+            padding-left: #{$spacer};
+        }
+    }
+
+    [style*="--p#{$breakpoint}:"] {
+        padding: var(--p#{$breakpoint})
+    }
+
+    [style*="--pt#{$breakpoint}:"] {
+        padding-top: var(--pt#{$breakpoint})
+    }
+
+    [style*="--pr#{$breakpoint}:"] {
+        padding-right: var(--pr#{$breakpoint})
+    }
+
+    [style*="--pb#{$breakpoint}:"] {
+        padding-bottom: var(--pb#{$breakpoint})
+    }
+
+    [style*="--pl#{$breakpoint}:"] {
+        padding-left: var(--pl#{$breakpoint})
+    }
+
+    [style*="--px#{$breakpoint}:"] {
+        padding-left: var(--px#{$breakpoint});
+        padding-right: var(--px#{$breakpoint})
+    }
+
+    [style*="--py#{$breakpoint}:"] {
+        padding-top: var(--py#{$breakpoint});
+        padding-bottom: var(--py#{$breakpoint})
+    }
+}

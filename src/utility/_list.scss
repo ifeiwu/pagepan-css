@@ -1,0 +1,29 @@
+@mixin mixin-list-class() {
+
+    .list-disc {
+      list-style-type: disc;
+    }
+
+    .list-decimal {
+      list-style-type: decimal;
+    }
+}
+
+@mixin mixin-list($breakpoint: null) {
+
+    [style*="--lis#{$breakpoint}:"] {
+      list-style: var(--lis#{$breakpoint})
+    }
+
+    [style*="--lisp#{$breakpoint}:"] {
+      list-style-position: var(--lisp#{$breakpoint})
+    }
+
+    [style*="--list#{$breakpoint}:"] {
+      list-style-type: var(--list#{$breakpoint})
+    }
+
+    [style*="--lisi#{$breakpoint}:"] {
+      list-style-image: var(--lisi#{$breakpoint})
+    }
+}

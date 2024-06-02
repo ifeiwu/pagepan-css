@@ -1,0 +1,12 @@
+@mixin mixin-order($breakpoint: null) {
+
+    @for $i from 0 through 5 {
+        .o-#{$i}#{$breakpoint} {
+            o: #{$i};
+        }
+    }
+
+    [style*="--o#{$breakpoint}:"] {
+        order: var(--o#{$breakpoint})
+    }
+}

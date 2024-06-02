@@ -1,0 +1,14 @@
+@mixin mixin-letter-spacing($breakpoint: null) {
+
+    @for $i from 0 through 15 {
+        $spacer: nth($spacers, $i + 1);
+
+        .ls-#{$i}#{$breakpoint} {
+            letter-spacing: #{$spacer}
+        }
+    }
+
+    [style*="--ls#{$breakpoint}:"] {
+        letter-spacing: var(--ls#{$breakpoint})
+    }
+}

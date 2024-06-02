@@ -1,0 +1,20 @@
+@mixin mixin-font ($breakpoint: null) {
+
+    @for $i from 0 through 30 {
+        .f-#{$i}#{$breakpoint} {
+            font-size: #{nth($font-sizes, $i + 1)};
+        }
+    }
+
+    [style*="--f#{$breakpoint}:"] {
+        font-size: var(--f#{$breakpoint})
+    }
+
+    [style*="--ff#{$breakpoint}:"] {
+        font-family: var(--ff#{$breakpoint})
+    }
+
+    [style*="--fw#{$breakpoint}:"] {
+        font-weight: var(--fw#{$breakpoint})
+    }
+}

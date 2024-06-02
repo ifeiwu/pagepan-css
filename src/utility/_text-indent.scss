@@ -1,0 +1,14 @@
+@mixin mixin-text-indent($breakpoint: null) {
+
+    @for $i from 0 through 15 {
+        $spacer: nth($spacers, $i + 1);
+
+        .ti-#{$i}#{$breakpoint} {
+            text-indent: #{$spacer}
+        }
+    }
+
+    [style*="--ti#{$breakpoint}:"] {
+        text-indent: var(--ti#{$breakpoint})
+    }
+}

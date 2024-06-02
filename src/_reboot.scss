@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    border: 0 solid currentColor;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    color: var(--mix);
+    background: var(--mix-40);
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+body,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul[class],
+ol[class] {
+    padding-left: 0;
+    margin-top: 0;
+    list-style: none;
+}
+
+a {
+    color: var(--mix);
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+a:hover, a.active {
+    color: var(--prim)
+}
+
+img,
+picture {
+    max-width: 100%;
+}
+
+svg {
+    vertical-align: text-bottom;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}

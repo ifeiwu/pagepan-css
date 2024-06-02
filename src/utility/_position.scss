@@ -1,0 +1,104 @@
+@mixin mixin-position($breakpoint: null) {
+
+    @each $value in (static, relative, absolute, fixed, sticky) {
+        .#{$value}#{$breakpoint} {
+            position: #{$value}
+        }
+    }
+
+    @each $name, $value in (top:0, right:0, bottom:0, left:0) {
+        .#{$name}-#{$value}#{$breakpoint} {
+            #{$name}: #{$value}
+        }
+    }
+
+    .absolute-full#{$breakpoint} {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .absolute-auto#{$breakpoint} {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        margin: auto;
+    }
+
+    .absolute-auto-x#{$breakpoint} {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .absolute-auto-y#{$breakpoint} {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .absolute-center#{$breakpoint} {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+    }
+
+    .absolute-center-y#{$breakpoint} {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .absolute-center-x#{$breakpoint} {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .sticky-top#{$breakpoint} {
+        position: sticky;
+        top: var(--offset-top, 0);
+    }
+
+    .fixed-top#{$breakpoint} {
+        position: fixed;
+        top: var(--offset-top, 0);
+        right: 0;
+        left: 0;
+    }
+
+    .fixed-bottom#{$breakpoint} {
+        position: fixed;
+        bottom: var(--offset-bottom, 0);
+        right: 0;
+        left: 0;
+    }
+
+    [style*="--pos#{$breakpoint}:"] {
+        position: var(--pos#{$breakpoint})
+    }
+
+    [style*="--top#{$breakpoint}:"] {
+        top: var(--top#{$breakpoint})
+    }
+
+    [style*="--right#{$breakpoint}:"] {
+        right: var(--right#{$breakpoint})
+    }
+
+    [style*="--bottom#{$breakpoint}:"] {
+        bottom: var(--bottom#{$breakpoint})
+    }
+
+    [style*="--left#{$breakpoint}:"] {
+        left: var(--left#{$breakpoint})
+    }
+}

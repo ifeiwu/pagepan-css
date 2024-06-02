@@ -1,0 +1,17 @@
+@mixin mixin-backdrop($breakpoint: null) {
+
+    @each $name, $value in (0:0, 1:4, 2:8, 3:12, 4:16, 5:24) {
+        .bd-blur-#{$name}#{$breakpoint} {
+            backdrop-filter: blur(#{$value})
+        }
+    }
+
+    [style*="--bdf#{$breakpoint}:"] {
+        backdrop-filter: var(--bgf#{$breakpoint})
+    }
+
+    [style*="--bdf-hvr#{$breakpoint}:"]:hover,
+    [style*="--bdf-hvr#{$breakpoint}:"]:focus {
+        backdrop-filter: var(--bdf-hvr#{$breakpoint})
+    }
+}

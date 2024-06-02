@@ -1,0 +1,20 @@
+@mixin mixin-overflow($breakpoint: null) {
+
+    @each $value in (auto, hidden, visible, scroll) {
+        .of-#{$value}#{$breakpoint} {
+            overflow: $value
+        }
+    }
+
+    [style*="--of#{$breakpoint}:"] {
+        overflow: var(--of#{$breakpoint})
+    }
+
+    [style*="--ofx#{$breakpoint}:"] {
+        overflow-x: var(--ofx#{$breakpoint})
+    }
+
+    [style*="--ofy#{$breakpoint}:"] {
+        overflow-y: var(--ofy#{$breakpoint})
+    }
+}

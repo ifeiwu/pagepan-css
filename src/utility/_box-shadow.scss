@@ -1,0 +1,39 @@
+@mixin mixin-box-shadow($breakpoint: null) {
+
+    .sw-1#{$breakpoint} {
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    }
+
+    .sw-2#{$breakpoint} {
+        box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    }
+
+    .sw-3#{$breakpoint} {
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    .sw-4#{$breakpoint} {
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    .sw-5#{$breakpoint} {
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .sw-inner#{$breakpoint} {
+        box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+    }
+
+    .sw-none#{$breakpoint} {
+        box-shadow: 0 0 #0000;
+    }
+
+    [style*="--sw#{$breakpoint}:"] {
+        --sw-x: 0;
+        --sw-y: .1px;
+        --sw-blur: .2px;
+        --sw-spread: 0;
+        --sw-color: var(--mia-15);
+        box-shadow: var(--sw-x#{$breakpoint}) calc(var(--sw#{$breakpoint}) * var(--sw-y#{$breakpoint})) calc(var(--sw#{$breakpoint}) * var(--sw-blur#{$breakpoint})) var(--sw-spread#{$breakpoint}) var(--sw-color#{$breakpoint})
+    }
+}

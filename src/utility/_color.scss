@@ -1,0 +1,43 @@
+@mixin mixin-color($breakpoint: null) {
+
+    .mix#{$breakpoint} {
+        color: var(--mix)
+    }
+
+    @for $i from 1 through 40 {
+        .mix-#{$i}#{$breakpoint} {
+            color: var(--mix-#{$i})
+        }
+    }
+
+    .prim#{$breakpoint} {
+        color: var(--prim)
+    }
+
+    @for $i from 1 through 20 {
+        .prim-#{$i}#{$breakpoint} {
+            color: var(--prim-#{$i})
+        }
+    }
+
+    .secd#{$breakpoint} {
+        color: var(--secd)
+    }
+
+    @for $i from 1 through 20 {
+        .secd-#{$i}#{$breakpoint} {
+            color: var(--secd-#{$i})
+        }
+    }
+
+    [style*="--c#{$breakpoint}:"] {
+        color: var(--c#{$breakpoint})
+    }
+
+    [style*="--c-hvr#{$breakpoint}:"] {
+        &:hover,
+        &:focus {
+            color: var(--c-hvr#{$breakpoint})
+        }
+    }
+}
