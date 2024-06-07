@@ -42,6 +42,16 @@
     }
 }
 
+.btn-secd {
+    background-color: var(--secd);
+    color: var(--secd-20);
+
+    &:hover,
+    &:focus {
+        background-color: var(--secd-3);
+    }
+}
+
 .btn-default {
     background-color: var(--mix-38);
     color: var(--mix);

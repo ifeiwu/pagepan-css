@@ -36,7 +36,7 @@
     }
 
     @for $i from 0 through 30 {
-        --width-#{$i}: #{nth($spacers, $i + 1)};
+        --space-#{$i}: #{nth($spacers, $i + 1)};
     }
 
     @each $name, $value in $breakpoints {

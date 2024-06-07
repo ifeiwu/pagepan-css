@@ -1,6 +1,6 @@
 @mixin mixin-gap($breakpoint: null) {
 
-    @for $i from 0 through 20 {
+    @for $i from 0 through 30 {
         $spacer: nth($spacers, $i + 1);
 
         .gap-#{$i}#{$breakpoint} {
