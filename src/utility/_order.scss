@@ -1,12 +1,16 @@
 @mixin mixin-order($breakpoint: null) {
 
-    @for $i from 0 through 5 {
-        .o-#{$i}#{$breakpoint} {
-            o: #{$i};
-        }
+    .order-first#{$breakpoint} {
+        order: -9999;
     }
 
-    [style*="--o#{$breakpoint}:"] {
-        order: var(--o#{$breakpoint})
+    .order-last#{$breakpoint} {
+        order: 9999;
+    }
+
+    @for $i from 0 through 12 {
+        .order-#{$i}#{$breakpoint} {
+            order: #{$i};
+        }
     }
 }

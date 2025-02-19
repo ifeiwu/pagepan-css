@@ -1,43 +1,32 @@
-@mixin mixin-color($breakpoint: null) {
+@mixin mixin-color-class() {
 
-    .mix#{$breakpoint} {
+    .mix {
         color: var(--mix)
     }
 
     @for $i from 1 through 40 {
-        .mix-#{$i}#{$breakpoint} {
+        .mix-#{$i} {
             color: var(--mix-#{$i})
         }
     }
 
-    .prim#{$breakpoint} {
-        color: var(--prim)
+    .primary {
+        color: var(--primary)
     }
 
     @for $i from 1 through 20 {
-        .prim-#{$i}#{$breakpoint} {
-            color: var(--prim-#{$i})
+        .primary-#{$i} {
+            color: var(--primary-#{$i})
         }
     }
 
-    .secd#{$breakpoint} {
-        color: var(--secd)
+    .secondary {
+        color: var(--secondary)
     }
 
     @for $i from 1 through 20 {
-        .secd-#{$i}#{$breakpoint} {
-            color: var(--secd-#{$i})
-        }
-    }
-
-    [style*="--c#{$breakpoint}:"] {
-        color: var(--c#{$breakpoint})
-    }
-
-    [style*="--c-hvr#{$breakpoint}:"] {
-        &:hover,
-        &:focus {
-            color: var(--c-hvr#{$breakpoint})
+        .secondary-#{$i} {
+            color: var(--secondary-#{$i})
         }
     }
 }

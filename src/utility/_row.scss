@@ -1,0 +1,65 @@
+@mixin mixin-row-class() {
+    .row {
+        --col-gutter-x: 0;
+        --col-gutter-y: 0;
+        --row-gutter-x: 0;
+        --row-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: var(--row-gutter-y);
+        margin-right: var(--row-gutter-x);
+        margin-left: var(--row-gutter-x);
+    }
+
+    .row > * {
+        width: 100%;
+        max-width: 100%;
+        padding-right: var(--col-gutter-x);
+        padding-left: var(--col-gutter-x);
+        margin-top: var(--col-gutter-y);
+    }
+}
+
+@mixin mixin-row($breakpoint: null) {
+
+    @for $i from 0 through 10 {
+        .row-#{$i}#{$breakpoint},
+        .row-x-#{$i}#{$breakpoint} {
+            --row-gutter-x: calc(-.5 * var(--gutter-x) * #{$i});
+        }
+
+        .row-#{$i}#{$breakpoint} > *,
+        .row-x-#{$i}#{$breakpoint} > * {
+            --col-gutter-x: calc(var(--gutter-x) * #{$i} * .5);
+        }
+
+        .row-#{$i}#{$breakpoint},
+        .row-y-#{$i}#{$breakpoint} {
+            --row-gutter-y: calc(-1 * var(--gutter-y) * #{$i});
+        }
+
+        .row-#{$i}#{$breakpoint} > *,
+        .row-y-#{$i}#{$breakpoint} > * {
+            --col-gutter-y: calc(var(--gutter-y) * #{$i});
+        }
+    }
+}
+
+@mixin mixin-row-col($breakpoint: null) {
+
+    .col#{$breakpoint} {
+        flex: 1 0 0%
+    }
+
+    .col-auto#{$breakpoint} {
+        flex: 0 0 auto;
+        width: auto
+    }
+
+    @for $i from 0 through $grid-columns {
+        .col-#{$i}#{$breakpoint} {
+            flex: 0 0 auto;
+            width: #{$i / $grid-columns * 100%}
+        }
+    }
+}

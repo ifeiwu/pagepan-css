@@ -80,6 +80,10 @@
         justify-content: space-around;
     }
 
+    .justify-evenly#{$breakpoint} {
+        justify-content: space-evenly;
+    }
+
     .items-start#{$breakpoint} {
         align-items: flex-start;
     }
@@ -146,45 +150,5 @@
 
     .self-stretch#{$breakpoint} {
         align-self: stretch;
-    }
-
-    [style*="--fx#{$breakpoint}:"] {
-        flex: var(--fx#{$breakpoint})
-    }
-
-    [style*="--fxb#{$breakpoint}:"] {
-        flex-basis: var(--fxb#{$breakpoint})
-    }
-
-    [style*="--fxd#{$breakpoint}:"] {
-        flex-direction: var(--fxd#{$breakpoint})
-    }
-
-    [style*="--fxg#{$breakpoint}:"] {
-        flex-grow: var(--fxg#{$breakpoint})
-    }
-
-    [style*="--fxs#{$breakpoint}:"] {
-        flex-shrink: var(--fxs#{$breakpoint})
-    }
-
-    [style*="--fxw#{$breakpoint}:"] {
-        flex-wrap: var(--fxw#{$breakpoint})
-    }
-
-    [style*="--jc#{$breakpoint}:"] {
-        justify-content: var(--jc#{$breakpoint})
-    }
-
-    [style*="--ac#{$breakpoint}:"] {
-        align-content: var(--ac#{$breakpoint})
-    }
-
-    [style*="--ai#{$breakpoint}:"] {
-        align-items: var(--ai#{$breakpoint})
-    }
-
-    [style*="--as#{$breakpoint}:"] {
-        align-self: var(--as#{$breakpoint})
     }
 }

@@ -1,0 +1,178 @@
+@mixin mixin-style-var($breakpoint: null) {
+    $vars: (
+        //"ainm": "animation",
+        //"ainmna": "animation-name",
+        //"ainmde": "animation-delay",
+        //"ainmdu": "animation-duration",
+        //"ainmdi": "animation-direction",
+        //"ainmtf": "transition-timing-function",
+        //"ainmic": "animation-iteration-count",
+        //"ainmps": "animation-play-state",
+        //"ainmfm": "animation-fill-mode",
+        //"aspect": "aspect-ratio",
+        "fl": "float",
+        "oy": "opacity",
+        "va": "vertical-align",
+        "tm": "transform",
+        "tmo": "transform-origin",
+        "fr": "filter",
+        "pe": "pointer-events",
+        "ol": "outline",
+        "tt": "text-transform",
+        "td": "text-decoration",
+        "bg": "background",
+        "bgc": "background-color",
+        "bgs": "background-size",
+        "bgi": "background-image",
+        "bgp": "background-position",
+        "bgr": "background-repeat",
+        "bga": "background-attachment",
+        "bdf": "backdrop-filter",
+        "b": "border",
+        "bt": "border-top",
+        "br": "border-right",
+        "bb": "border-bottom",
+        "bl": "border-left",
+        "bx": ("border-left", "border-right"),
+        "by": ("border-top", "border-bottom"),
+        "bc": "border-color",
+        "bs": "border-style",
+        "bw": "border-width",
+        "r": "border-radius",
+        "rt": ("border-top-left-radius", "border-top-right-radius"),
+        "rb": ("border-bottom-left-radius", "border-bottom-right-radius"),
+        "rl": ("border-top-left-radius", "border-bottom-left-radius"),
+        "rr": ("border-top-right-radius", "border-bottom-right-radius"),
+        "rtl": "border-top-left-radius",
+        "rtr": "border-top-right-radius",
+        "rbl": "border-bottom-left-radius",
+        "rbr": "border-bottom-right-radius",
+        "c": "color",
+        "fs": "font-size",
+        "ft": "font-style",
+        "ff": "font-family",
+        "fw": "font-weight",
+        //"fx": "flex",
+        //"fxb": "flex-basis",
+        //"fxd": "flex-direction",
+        //"fxg": "flex-grow",
+        //"fxs": "flex-shrink",
+        //"fxw": "flex-wrap",
+        //"jc": "justify-content",
+        //"ac": "align-content",
+        //"ai": "align-items",
+        //"as": "align-self",
+        "gap": "gap",
+        "gapx": "column-gap",
+        "gapy": "row-gap",
+        "colc": "column-count",
+        //"gac": "grid-auto-columns",
+        //"gar": "grid-auto-rows",
+        //"gaf": "grid-auto-flow",
+        //"gc": "grid-column",
+        //"gr": "grid-row",
+        "gtc": "grid-template-columns",
+        "gtr": "grid-template-rows",
+        "h": "height",
+        //"ls": "letter-spacing",
+        "lh": "line-height",
+        "m": "margin",
+        "mt": "margin-top",
+        "mr": "margin-right",
+        "mb": "margin-bottom",
+        "ml": "margin-left",
+        "mx": ("margin-left", "margin-right"),
+        "my": ("margin-top", "margin-bottom"),
+        "maxh": "max-height",
+        "maxw": "max-width",
+        "minh": "min-height",
+        "minw": "min-width",
+        "objf": "object-fit",
+        "objp": "object-position",
+        "p": "padding",
+        "pt": "padding-top",
+        "pr": "padding-right",
+        "pb": "padding-bottom",
+        "pl": "padding-left",
+        "px": ("padding-left", "padding-right"),
+        "py": ("padding-top", "padding-bottom"),
+        "top": "top",
+        "right": "right",
+        "bottom": "bottom",
+        "left": "left",
+        "tn": "transition",
+        //"tnde": "transition-delay",
+        //"tndu": "transition-duration",
+        //"tnpr": "transition-property",
+        //"tntf": "transition-timing-function",
+        "w": "width",
+        //"z": "z-index",
+    );
+
+    @each $name, $attr in $vars {
+        [style*="--#{$name}#{$breakpoint}:"] {
+            @if (type-of($attr) == 'list') {
+                @each $_attr in $attr {
+                    #{$_attr}: var(--#{$name}#{$breakpoint});
+                }
+            } @else {
+                #{$attr}: var(--#{$name}#{$breakpoint});
+            }
+        }
+    }
+
+    [style*="--lc#{$breakpoint}:"] {
+        display: -webkit-box;
+        -webkit-line-clamp: var(--lc#{$breakpoint});
+        -webkit-box-orient: vertical;
+        overflow: hidden
+    }
+
+    [style*="--ts#{$breakpoint}:"] {
+        --ts-color#{$breakpoint}: var(--alpha-15);
+        text-shadow: 0 calc(var(--ts#{$breakpoint}) * .1px) calc(var(--ts#{$breakpoint}) * .2px) var(--ts-color#{$breakpoint})
+    }
+
+    [style*="--sw#{$breakpoint}:"] {
+        --sw-x#{$breakpoint}: 0;
+        --sw-y#{$breakpoint}: .1px;
+        --sw-blur#{$breakpoint}: .2px;
+        --sw-spread#{$breakpoint}: 0;
+        --sw-color#{$breakpoint}: var(--alpha-15);
+        box-shadow: var(--sw-x#{$breakpoint}) calc(var(--sw#{$breakpoint}) * var(--sw-y#{$breakpoint})) calc(var(--sw#{$breakpoint}) * var(--sw-blur#{$breakpoint})) var(--sw-spread#{$breakpoint}) var(--sw-color#{$breakpoint})
+    }
+
+    [style*="--sw-hvr#{$breakpoint}:"]:hover,
+    [style*="--sw-hvr#{$breakpoint}:"]:focus {
+        --sw-x-hvr#{$breakpoint}: 0;
+        --sw-y-hvr#{$breakpoint}: .1px;
+        --sw-blur-hvr#{$breakpoint}: .2px;
+        --sw-spread-hvr#{$breakpoint}: 0;
+        --sw-color-hvr#{$breakpoint}: var(--alpha-15);
+        box-shadow: var(--sw-x-hvr#{$breakpoint}) calc(var(--sw-hvr#{$breakpoint}) * var(--sw-y-hvr#{$breakpoint})) calc(var(--sw-hvr#{$breakpoint}) * var(--sw-blur-hvr#{$breakpoint})) var(--sw-spread-hvr#{$breakpoint}) var(--sw-color-hvr#{$breakpoint})
+    }
+}
+
+@mixin mixin-style-var-hvr {
+    $vars-hvr: (
+        "tm-hvr": "transform",
+        "bg-hvr": "background",
+        "bgi-hvr": "background-image",
+        "bgp-hvr": "background-position",
+        "bgc-hvr": "background-color",
+        "bdf-hvr": "backdrop-filter",
+        "b-hvr": "border",
+        "bc-hvr": "border-color",
+        "r-hvr": "border-radius",
+        "c-hvr": "color",
+        "tn-hvr": "transition",
+    );
+
+    @each $name, $attr in $vars-hvr {
+        [style*="--#{$name}:"] {
+            &:hover, &:focus {
+                #{$attr}: var(--#{$name})
+            }
+        }
+    }
+}

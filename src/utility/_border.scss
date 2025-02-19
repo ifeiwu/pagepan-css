@@ -10,85 +10,66 @@
         .b-#{$i}#{$breakpoint} {
             border-width: #{$i}px;
         }
+        .bt-#{$i}#{$breakpoint} {
+            border-top-width: #{$i}px;
+        }
+        .br-#{$i}#{$breakpoint} {
+            border-right-width: #{$i}px;
+        }
+        .bb-#{$i}#{$breakpoint} {
+            border-bottom-width: #{$i}px;
+        }
+        .bl-#{$i}#{$breakpoint} {
+            border-left-width: #{$i}px;
+        }
     }
 
     .r-full#{$breakpoint} {
         border-radius: 60rem
     }
 
-    @for $i from 0 through 10 {
-        .r-#{$i}#{$breakpoint} {
-            border-radius: #{$i}px;
+    $j: -1;
+    @for $i from 0 through 40 {
+        @if $i % 2 == 0 {
+            $j: $j + 1;
+            $val: (1 / 16) * $i;
+            .r-#{$j}#{$breakpoint} {
+                border-radius: #{$val}rem;
+            }
         }
     }
 
-    .b-transp#{$breakpoint} {
+    .b-transparent#{$breakpoint} {
         border-color: transparent
     }
 
-    .b-prim#{$breakpoint} {
-        border-color: var(--prim)
+    .b-mix#{$breakpoint} {
+        border-color: var(--mix)
     }
 
-    .b-secd#{$breakpoint} {
-        border-color: var(--secd)
+    @for $i from 1 through 40 {
+        .b-mix-#{$i}#{$breakpoint} {
+            border-color: var(--mix-#{$i})
+        }
     }
 
-    [style*="--b#{$breakpoint}:"] {
-        border: var(--b#{$breakpoint})
+    .b-primary#{$breakpoint} {
+        border-color: var(--primary)
     }
 
-    [style*="--bt#{$breakpoint}:"] {
-        border-top: var(--bt#{$breakpoint})
+    @for $i from 1 through 20 {
+        .b-primary-#{$i}#{$breakpoint} {
+            border-color: var(--primary-#{$i})
+        }
     }
 
-    [style*="--br#{$breakpoint}:"] {
-        border-right: var(--br#{$breakpoint})
+    .b-secondary#{$breakpoint} {
+        border-color: var(--secondary)
     }
 
-    [style*="--bb#{$breakpoint}:"] {
-        border-bottom: var(--bb#{$breakpoint})
-    }
-
-    [style*="--bl#{$breakpoint}:"] {
-        border-left: var(--bl#{$breakpoint})
-    }
-
-    [style*="--bc#{$breakpoint}:"] {
-        border-color: var(--bc#{$breakpoint})
-    }
-
-    [style*="--bc-hvr#{$breakpoint}:"]:hover,
-    [style*="--bc-hvr#{$breakpoint}:"]:focus {
-        border-color: var(--bc-hvr#{$breakpoint})
-    }
-
-    [style*="--bw#{$breakpoint}:"] {
-        border-width: var(--bw#{$breakpoint})
-    }
-
-    [style*="--r#{$breakpoint}:"] {
-        border-radius: var(--r#{$breakpoint})
-    }
-
-    [style*="--r-hvr#{$breakpoint}:"]:hover,
-    [style*="--r-hvr#{$breakpoint}:"]:focus {
-        border-radius: var(--r-hvr#{$breakpoint})
-    }
-
-    [style*="--rtl#{$breakpoint}:"] {
-        border-top-left-radius: var(--rtl#{$breakpoint})
-    }
-
-    [style*="--rtr#{$breakpoint}:"] {
-        border-top-right-radius: var(--rtr#{$breakpoint})
-    }
-
-    [style*="--rbl#{$breakpoint}:"] {
-        border-bottom-left-radius: var(--rbl#{$breakpoint})
-    }
-
-    [style*="--rbr#{$breakpoint}:"] {
-        border-bottom-right-radius: var(--rbr#{$breakpoint})
+    @for $i from 1 through 20 {
+        .b-secondary-#{$i}#{$breakpoint} {
+            border-color: var(--secondary-#{$i})
+        }
     }
 }

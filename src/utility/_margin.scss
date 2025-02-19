@@ -26,6 +26,22 @@
         .mx-#{$i}#{$breakpoint} {
             margin-left: #{$spacer};
         }
+
+        .mt-n#{$i}#{$breakpoint} {
+            margin-top: -#{$spacer};
+        }
+
+        .mr-n#{$i}#{$breakpoint} {
+            margin-right: -#{$spacer};
+        }
+
+        .mb-n#{$i}#{$breakpoint} {
+            margin-bottom: -#{$spacer};
+        }
+
+        .ml-n#{$i}#{$breakpoint} {
+            margin-left: -#{$spacer};
+        }
     }
 
     .m-auto#{$breakpoint} {
@@ -60,33 +76,11 @@
         margin-right: 0;
     }
 
-    [style*="--m#{$breakpoint}:"] {
-        margin: var(--m#{$breakpoint})
+    .my-child-0#{$breakpoint} > :first-child {
+        margin-top: 0;
     }
 
-    [style*="--mt#{$breakpoint}:"] {
-        margin-top: var(--mt#{$breakpoint})
-    }
-
-    [style*="--mr#{$breakpoint}:"] {
-        margin-right: var(--mr#{$breakpoint})
-    }
-
-    [style*="--mb#{$breakpoint}:"] {
-        margin-bottom: var(--mb#{$breakpoint})
-    }
-
-    [style*="--ml#{$breakpoint}:"] {
-        margin-left: var(--ml#{$breakpoint})
-    }
-
-    [style*="--mx#{$breakpoint}:"] {
-        margin-left: var(--mx#{$breakpoint});
-        margin-right: var(--mx#{$breakpoint})
-    }
-
-    [style*="--my#{$breakpoint}:"] {
-        margin-top: var(--my#{$breakpoint});
-        margin-bottom: var(--my#{$breakpoint})
+    .my-child-0#{$breakpoint} > :last-child {
+        margin-bottom: 0;
     }
 }

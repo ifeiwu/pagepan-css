@@ -5,16 +5,4 @@
             overflow: $value
         }
     }
-
-    [style*="--of#{$breakpoint}:"] {
-        overflow: var(--of#{$breakpoint})
-    }
-
-    [style*="--ofx#{$breakpoint}:"] {
-        overflow-x: var(--ofx#{$breakpoint})
-    }
-
-    [style*="--ofy#{$breakpoint}:"] {
-        overflow-y: var(--ofy#{$breakpoint})
-    }
 }

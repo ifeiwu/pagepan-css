@@ -1,3 +1,47 @@
+@mixin mixin-background-class() {
+    .bg-black {
+        background-color: #000
+    }
+
+    .bg-white {
+        background-color: #fff
+    }
+
+    .bg-transparent {
+        background-color: transparent
+    }
+
+    .bg-primary {
+        background-color: var(--primary)
+    }
+
+    @for $i from 1 through 20 {
+        .bg-primary-#{$i} {
+            background-color: var(--primary-#{$i})
+        }
+    }
+
+    .bg-secondary {
+        background-color: var(--secondary)
+    }
+
+    @for $i from 1 through 20 {
+        .bg-secondary-#{$i} {
+            background-color: var(--secondary-#{$i})
+        }
+    }
+
+    .bg-mix {
+        background-color: var(--mix)
+    }
+
+    @for $i from 1 through 40 {
+        .bg-mix-#{$i} {
+            background-color: var(--mix-#{$i})
+        }
+    }
+}
+
 @mixin mixin-background($breakpoint: null) {
 
     @each $name, $value in (none:0 0, auto:auto, cover:cover, contain:contain) {
@@ -28,86 +72,5 @@
         .bg-#{$name}#{$breakpoint} {
             background-clip: #{$value}
         }
-    }
-
-    .bg-transp#{$breakpoint} {
-        background-color: transparent
-    }
-
-    .bg-prim#{$breakpoint} {
-        background-color: var(--prim)
-    }
-
-    @for $i from 1 through 20 {
-        .bg-prim-#{$i}#{$breakpoint} {
-            background-color: var(--prim-#{$i})
-        }
-    }
-
-    .bg-secd#{$breakpoint} {
-        background-color: var(--secd)
-    }
-
-    @for $i from 1 through 20 {
-        .bg-secd-#{$i}#{$breakpoint} {
-            background-color: var(--secd-#{$i})
-        }
-    }
-
-    .bg-mix#{$breakpoint} {
-        background-color: var(--mix)
-    }
-
-    @for $i from 1 through 40 {
-        .bg-mix-#{$i}#{$breakpoint} {
-            background-color: var(--mix-#{$i})
-        }
-    }
-
-    [style*="--bg#{$breakpoint}:"] {
-        background: var(--bg#{$breakpoint})
-    }
-
-    [style*="--bgc#{$breakpoint}:"] {
-        background-color: var(--bgc#{$breakpoint})
-    }
-
-    [style*="--bgs#{$breakpoint}:"] {
-        background-size: var(--bgs#{$breakpoint})
-    }
-
-    [style*="--bgi#{$breakpoint}:"] {
-        background-image: var(--bgi#{$breakpoint})
-    }
-
-    [style*="--bgp#{$breakpoint}:"] {
-        background-position: var(--bgp#{$breakpoint})
-    }
-
-    [style*="--bgr#{$breakpoint}:"] {
-        background-repeat: var(--bgr#{$breakpoint})
-    }
-
-    [style*="--bga#{$breakpoint}:"] {
-        background-attachment: var(--bga#{$breakpoint})
-    }
-
-    [style*="--bg-hvr#{$breakpoint}:"]:hover,
-    [style*="--bg-hvr#{$breakpoint}:"]:focus {
-        background: var(--bg-hvr#{$breakpoint})
-    }
-
-    [style*="--bgc-hvr#{$breakpoint}:"]:hover,
-    [style*="--bgc-hvr#{$breakpoint}:"]:focus {
-        background-color: var(--bgc-hvr#{$breakpoint})
-    }
-
-    [style*="--bdf#{$breakpoint}:"] {
-        backdrop-filter: var(--bgf#{$breakpoint})
-    }
-
-    [style*="--bdf-hvr#{$breakpoint}:"]:hover,
-    [style*="--bdf-hvr#{$breakpoint}:"]:focus {
-        backdrop-filter: var(--bdf-hvr#{$breakpoint})
     }
 }

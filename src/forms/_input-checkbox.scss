@@ -6,7 +6,7 @@
 }
 
 .form-checkbox:checked {
-    background-color: var(--prim);
+    background-color: var(--primary);
 }
 
 /* .form-checkbox:checked::before {
@@ -17,7 +17,7 @@
     content: "";
     height: 80%;
     width: 80%;
-    background-color: var(--prim);
+    background-color: var(--primary);
 } */
 
 .form-checkbox.switch {
@@ -32,7 +32,7 @@
     width: 0.6563rem;
     height: 0.6563rem;
     border-radius: 50%;
-    background-color: var(--prim-20);
+    background-color: var(--primary-20);
     content: '';
     position: absolute;
     top: 50%;
@@ -40,7 +40,7 @@
 }
 
 .form-checkbox.switch:checked {
-    background-color: var(--prim);
+    background-color: var(--primary);
 }
 
 .form-checkbox.switch:checked:before {

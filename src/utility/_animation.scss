@@ -1,5 +1,4 @@
 @mixin mixin-animation-class() {
-    
     .anim-none {
         animation: none;
     }
@@ -54,44 +53,5 @@
             transform: translateY(0);
             animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
         }
-    }
-}
-
-@mixin mixin-animation($breakpoint: null) {
-    
-    [style*="--ainm#{$breakpoint}:"] {
-        animation: var(--ainm#{$breakpoint})
-    }
-
-    [style*="--ainmna#{$breakpoint}:"] {
-        animation-name: var(--ainmna#{$breakpoint})
-    }
-    
-    [style*="--ainmde#{$breakpoint}:"] {
-        animation-delay: var(--ainmde#{$breakpoint})
-    }
-    
-    [style*="--ainmdu#{$breakpoint}:"] {
-        animation-duration: var(--ainmdu#{$breakpoint})
-    }
-    
-    [style*="--ainmdi#{$breakpoint}:"] {
-        animation-direction: var(--ainmdi#{$breakpoint})
-    }
-    
-    [style*="--ainmtf#{$breakpoint}:"] {
-        transition-timing-function: var(--ainmtf#{$breakpoint})
-    }
-
-    [style*="--ainmic#{$breakpoint}:"] {
-        animation-iteration-count: var(--ainmic#{$breakpoint})
-    }
-
-    [style*="--ainmps#{$breakpoint}:"] {
-        animation-play-state: var(--ainmps#{$breakpoint})
-    }
-
-    [style*="--ainmfm#{$breakpoint}:"] {
-        animation-fill-mode: var(--ainmfm#{$breakpoint})
     }
 }

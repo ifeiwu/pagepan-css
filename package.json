@@ -3,13 +3,10 @@
     "version": "1.0.0",
     "source": [
         "src/pagepan.scss",
-        "src/pagepan-all.scss",
-        "src/pagepan-xl.scss",
-        "src/pagepan-lg.scss",
-        "src/pagepan-md.scss",
-        "src/pagepan-sm.scss"
+        "src/pagepan-base-not-layer.scss",
+        "src/pageyun.scss"
     ],
-    "browserslist": "> 0.5%, last 10 versions, not dead",
+    "browserslist": "> 0.5%, last 20 versions, not dead",
     "scripts": {
         "start": "parcel",
         "watch": "parcel watch",

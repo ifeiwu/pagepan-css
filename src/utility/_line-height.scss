@@ -5,8 +5,4 @@
             line-height: #{$value}
         }
     }
-
-    [style*="--lh#{$breakpoint}:"] {
-        line-height: var(--lh#{$breakpoint})
-    }
 }

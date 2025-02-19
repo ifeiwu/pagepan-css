@@ -1,0 +1,17 @@
+@mixin mixin-max-width($breakpoint: null) {
+
+    @each $name, $value in (0:0px, full:100%, none:none) {
+        .max-w-#{$name}#{$breakpoint} {
+            max-width: #{$value}
+        }
+    }
+
+    $j: 0;
+    @for $i from 24 through 49 {
+        $spacer: nth($spacers, $i + 1);
+        $j: $j + 1;
+        .max-w-#{$j}#{$breakpoint} {
+            max-width: #{$spacer};
+        }
+    }
+}

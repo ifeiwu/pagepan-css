@@ -1,21 +1,10 @@
 @mixin mixin-container-class() {
 
-    .container, .container-fluid {
-        container-type: inline-size;
-    }
-
     .container {
-        --gutter-x: #{$container-spacer};
-        --gutter-y: 0;
-        padding-right: var(--gutter-x);
-        padding-left: var(--gutter-x);
+        padding-right: 1rem;
+        padding-left: 1rem;
         margin-right: auto;
         margin-left: auto;
-        min-height: 100%;
-    }
-
-    .container-xs {
-        max-width: 480px
     }
 
     .container-sm {
@@ -44,5 +33,37 @@
 
     .container-fluid {
         max-width: 100%
+    }
+
+    @media (min-width: 0px) {
+        .container-fluid, .container {
+            --gutter: .25rem;
+            --gutter-x: var(--gutter);
+            --gutter-y: var(--gutter);
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container-fluid, .container-3xl, .container-2xl, .container-xl, .container-lg, .container-md {
+            --gutter: .5rem;
+            --gutter-x: var(--gutter);
+            --gutter-y: var(--gutter);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container-fluid, .container-3xl, .container-2xl, .container-xl, .container-lg {
+            --gutter: .75rem;
+            --gutter-x: var(--gutter);
+            --gutter-y: var(--gutter);
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .container-fluid, .container-3xl, .container-2xl, .container-xl {
+            --gutter: 1rem;
+            --gutter-x: var(--gutter);
+            --gutter-y: var(--gutter);
+        }
     }
 }

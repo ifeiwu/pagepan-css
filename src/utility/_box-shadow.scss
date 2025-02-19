@@ -27,13 +27,4 @@
     .sw-none#{$breakpoint} {
         box-shadow: 0 0 #0000;
     }
-
-    [style*="--sw#{$breakpoint}:"] {
-        --sw-x: 0;
-        --sw-y: .1px;
-        --sw-blur: .2px;
-        --sw-spread: 0;
-        --sw-color: var(--mia-15);
-        box-shadow: var(--sw-x#{$breakpoint}) calc(var(--sw#{$breakpoint}) * var(--sw-y#{$breakpoint})) calc(var(--sw#{$breakpoint}) * var(--sw-blur#{$breakpoint})) var(--sw-spread#{$breakpoint}) var(--sw-color#{$breakpoint})
-    }
 }

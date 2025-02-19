@@ -66,32 +66,4 @@
     .col-end-auto#{$breakpoint} {
         grid-column-end: auto;
     }
-
-    [style*="--gac#{$breakpoint}:"] {
-        grid-auto-columns: var(--gac#{$breakpoint})
-    }
-
-    [style*="--gar#{$breakpoint}:"] {
-        grid-auto-rows: var(--gar#{$breakpoint})
-    }
-
-    [style*="--gaf#{$breakpoint}:"] {
-        grid-auto-flow: var(--gaf#{$breakpoint})
-    }
-
-    [style*="--gc#{$breakpoint}:"] {
-        grid-column: var(--gc#{$breakpoint})
-    }
-
-    [style*="--gr#{$breakpoint}:"] {
-        grid-row: var(--gr#{$breakpoint})
-    }
-
-    [style*="--gtc#{$breakpoint}:"] {
-        grid-template-columns: var(--gtc#{$breakpoint})
-    }
-
-    [style*="--gtr#{$breakpoint}:"] {
-        grid-template-rows: var(--gtr#{$breakpoint})
-    }
 }

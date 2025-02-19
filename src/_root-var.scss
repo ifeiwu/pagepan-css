@@ -2,34 +2,43 @@
     --white: #fff;
     --black: #000;
 
-    --prim: #{$prim-color};
+    --primary: #{$primary-color};
     @for $i from 1 through 20 {
-        --prim-#{$i}: #{rgba-to-hex(fade-out($prim-color, calc($i * 5 / 100)))};
+        --primary-#{$i}: #{rgba-to-hex(fade-out($primary-color, $i * 5 / 100))};
     }
 
-    --secd: #{$secd-color};
+    --secondary: #{$secondary-color};
     @for $i from 1 through 20 {
-        --secd-#{$i}: #{rgba-to-hex(fade-out($secd-color, calc($i * 5 / 100)))};
+        --secondary-#{$i}: #{rgba-to-hex(fade-out($secondary-color, $i * 5 / 100))};
     }
 
-    --mix: #{$mix-color};
+    --mix: #{mix($bg-color, $text-color, 0)};
     @for $i from 1 through 40 {
-        --mix-#{$i}: #{rgba-to-hex(fade-out($mix-color, calc($i * 2.5 / 100)))};
+        --mix-#{$i}: #{mix($bg-color, $text-color, $i * 2.5)};
     }
 
-    @for $i from 1 through 20 {
-        --mia-#{$i}: #{fade-out($mix-color, calc($i * 5 / 100))};
+    @for $i from 0 through 19 {
+        $j: $i * 5;
+        --alpha-#{$j}: #{fade-out($mix-color, (100 - $j) / 100)};
+        //--mixa-#{$j}: #{fade-out($mix-color, (100 - $j) / 100)};
     }
 
-    @for $i from 1 through 20 {
-        --bga-#{$i}: #{fade-out($bg-color, calc($i * 5 / 100))};
+    @for $i from 0 through 19 {
+        $j: $i * 5;
+        --bg-alpha-#{$j}: #{fade-out($bg-color, (100 - $j) / 100)};
+        //--bga-#{$j}: #{fade-out($bg-color, (100 - $j) / 100)};
     }
 
     //$yellow-color: #e67700;
     //--yellow: #{$yellow-color};
     //@for $i from 1 through 9 {
-    //    --yellow-#{$i}: #{rgba-to-hex(fade-out($yellow-color, calc($i * 9 / 100)))};
+    //    --yellow-#{$i}: #{rgba-to-hex(fade-out($yellow-color, $i * 9 / 100))};
     //}
+
+    --link-color: var(--mix);
+    --link-hover-color: var(--primary);
+    --link-active-color: var(--primary);
+    --link-active-bgcolor: var(--primary-16);
 
     @for $i from 0 through 30 {
         --font-#{$i}: #{nth($font-sizes, $i + 1)};
@@ -47,5 +56,5 @@
         --width-#{$name}: #{$value};
     }
 
-    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Open Sans', 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', sans-serif;
+    --font-family: '#{$root-font-family}';
 }

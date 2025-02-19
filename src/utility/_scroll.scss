@@ -16,6 +16,6 @@
 
     .scrollbar-hidden {
         overflow: hidden;
-        width: calc(100vw - var(--scrollbar-width));
+        width: calc(100vw - var(--scrollbar-width, 0px));
     }
 }

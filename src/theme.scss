@@ -1,0 +1,36 @@
+@import "functions";
+@import "variables";
+
+.theme-invert {
+    --mix: #{mix($text-color, $bg-color, 0)};
+    @for $i from 1 through 40 {
+        --mix-#{$i}: #{mix($text-color, $bg-color, $i * 2.5)};
+    }
+
+    @for $i from 0 through 19 {
+        $j: $i * 5;
+        --alpha-#{$j}: #{fade-out($bg_color, (100 - $j) / 100)};
+        //--mixa-#{$j}: #{fade-out($bg_color, (100 - $j) / 100)};
+    }
+
+    @for $i from 0 through 19 {
+        $j: $i * 5;
+        --bg-alpha-#{$j}: #{fade-out($text_color, (100 - $j) / 100)};
+        //--bga-#{$j}: #{fade-out($text_color, (100 - $j) / 100)};
+    }
+
+    --link-color: var(--mix-6);
+    --link-hover-color: var(--mix);
+    --link-active-color: var(--mix);
+    --link-active-bgcolor: var(--mix-36);
+
+    color: var(--mix-10);
+    background-color: var(--mix-40);
+}
+
+.theme-invert {
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: var(--mix);
+    }
+}

@@ -1,12 +1,8 @@
 @mixin mixin-z-index($breakpoint: null) {
 
-    @each $key, $value in (1:1, 2:2, 3:3, 4:4, 5:5, top:9999, auto:auto) {
+    @each $key, $value in (0:0, 10:10, 20:20, 30:30, 40:40, 50:50, bottom:-1, top:9999, auto:auto) {
         .z-#{$key}#{$breakpoint} {
             z-index: #{$value}
         }
-    }
-
-    [style*="--z#{$breakpoint}:"] {
-        z-index: var(--z#{$breakpoint})
     }
 }

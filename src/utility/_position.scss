@@ -81,24 +81,4 @@
         right: 0;
         left: 0;
     }
-
-    [style*="--pos#{$breakpoint}:"] {
-        position: var(--pos#{$breakpoint})
-    }
-
-    [style*="--top#{$breakpoint}:"] {
-        top: var(--top#{$breakpoint})
-    }
-
-    [style*="--right#{$breakpoint}:"] {
-        right: var(--right#{$breakpoint})
-    }
-
-    [style*="--bottom#{$breakpoint}:"] {
-        bottom: var(--bottom#{$breakpoint})
-    }
-
-    [style*="--left#{$breakpoint}:"] {
-        left: var(--left#{$breakpoint})
-    }
 }

@@ -1,22 +1,32 @@
 @mixin mixin-gap($breakpoint: null) {
-
+    // 自动适应屏幕宽度调整间距大小
     @for $i from 0 through 30 {
-        $spacer: nth($spacers, $i + 1);
-
         .gap-#{$i}#{$breakpoint} {
-            gap: #{$spacer};
+            gap: calc(var(--gutter) * #{$i});
         }
 
         .gap-y-#{$i}#{$breakpoint} {
-            row-gap: #{$spacer};
+            row-gap: calc(var(--gutter) * #{$i});
         }
 
         .gap-x-#{$i}#{$breakpoint} {
-            column-gap: #{$spacer};
+            column-gap: calc(var(--gutter) * #{$i});
         }
     }
 
-    [style*="--gap#{$breakpoint}:"] {
-        gap: var(--gap#{$breakpoint})
+    // 手动调整间距大小
+    @for $i from 0 through 30 {
+        $spacer: nth($spacers, $i + 1);
+        .g-#{$i}#{$breakpoint} {
+            gap: #{$spacer};
+        }
+
+        .gx-#{$i}#{$breakpoint} {
+            column-gap: #{$spacer};
+        }
+
+        .gy-#{$i}#{$breakpoint} {
+            row-gap: #{$spacer};
+        }
     }
 }

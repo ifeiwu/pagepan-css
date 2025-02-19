@@ -6,66 +6,105 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: #{$root-font-size}px;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-html:focus-within {
-    scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
 }
 
 body {
-    font-family: var(--font-family);
+    margin: 0;
     font-size: 1rem;
+    font-family: var(--font-family);
     color: var(--mix);
     background: var(--mix-40);
-    text-rendering: optimizeSpeed;
+    text-align: left;
     line-height: 1.5;
 }
 
-body,
-p,
-figure,
-blockquote,
-dl,
-dd {
-    margin: 0;
+a:not(.btn) {
+    color: var(--link-color);
+    text-decoration: none;
+    background-color: transparent;
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+}
+
+a:not(.btn):hover {
+    color: var(--link-hover-color, var(--link-active-color))
+}
+
+a:not(.btn).active {
+    color: var(--link-active-color, var(--link-hover-color))
+}
+
+a:not([href]):not([tabindex]) {
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    text-decoration: none;
+    outline: 0;
+}
+
+[tabindex="-1"]:focus {
+    outline: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin-bottom: 0;
 }
 
 ul[class],
 ol[class] {
     padding-left: 0;
-    margin-top: 0;
+    margin-bottom: 0;
     list-style: none;
 }
 
-a {
-    color: var(--mix);
-    text-decoration: none;
-    background-color: transparent;
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.15
 }
 
-a:not([class]) {
-    text-decoration-skip-ink: auto;
+figure {
+    margin: 0 0 1rem;
 }
 
-a:hover, a.active {
-    color: var(--prim)
-}
-
-img,
-picture {
+img {
+    height: auto;
     max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
 }
 
 svg {
+    overflow: hidden;
     vertical-align: text-bottom;
 }
 
-input,
-button,
-textarea,
-select {
-    font: inherit;
+[hidden] {
+    display: none;
 }

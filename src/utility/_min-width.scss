@@ -1,0 +1,8 @@
+@mixin mixin-min-width($breakpoint: null) {
+
+    @each $name, $value in (0:0px, full:100%) {
+        .min-w-#{$name}#{$breakpoint} {
+            min-width: #{$value}
+        }
+    }
+}

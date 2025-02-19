@@ -5,8 +5,4 @@
             aspect-ratio: #{$value}
         }
     }
-
-    [style*="--aspect#{$breakpoint}:"] {
-        aspect-ratio: var(--aspect#{$breakpoint})
-    }
 }

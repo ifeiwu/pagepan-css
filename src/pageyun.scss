@@ -1,26 +1,21 @@
 @import "functions";
+@import "variables-input";
 @import "variables";
 @import "breakpoints";
 @import "utility";
 @import "root-var";
-
-@layer {
-    @import "reboot";
-    @import "forms";
-    @import "table";
-}
+@import "style-var";
 
 @include mixin-text-class();
 @include mixin-list-class();
+@include mixin-row-class();
 @include mixin-container-class();
 @include mixin-animation-class();
 @include mixin-transition-class();
 @include mixin-scroll-class();
+@include mixin-color-class();
+@include mixin-background-class();
 
-@include mixin-breakpoints(null);
+@include mixin-breakpoints(0);
 
-@each $breakpoint, $minwidth in $breakpoints {
-    @container (min-width: #{$minwidth}) {
-        @include mixin-breakpoints($breakpoint);
-    }
-}
+@include mixin-style-var-hvr();

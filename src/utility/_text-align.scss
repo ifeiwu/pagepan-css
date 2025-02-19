@@ -5,8 +5,4 @@
             text-align: $value
         }
     }
-
-    [style*="--ts#{$breakpoint}:"] {
-        text-shadow: var(--ts#{$breakpoint})
-    }
 }

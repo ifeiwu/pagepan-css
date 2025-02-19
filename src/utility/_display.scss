@@ -1,12 +1,8 @@
 @mixin mixin-display($breakpoint: null) {
 
-    @each $name, $value in (inline:inline, inline-block:inline-block, block:block, flex:flex, inline-flex:inline-flex, grid:grid, table:table, hidden:none) {
+    @each $name, $value in (inline:inline, inline-block:inline-block, block:block, flex:flex, inline-flex:inline-flex, grid:grid, inline-grid:inline-grid, table:table, table-cell:table-cell, table-row: table-row, hidden:none) {
         .#{$name}#{$breakpoint} {
             display: #{$value}
         }
-    }
-
-    [style*="--d#{$breakpoint}:"] {
-        display: var(--d#{$breakpoint})
     }
 }

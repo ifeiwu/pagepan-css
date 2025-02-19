@@ -5,13 +5,4 @@
             backdrop-filter: blur(#{$value})
         }
     }
-
-    [style*="--bdf#{$breakpoint}:"] {
-        backdrop-filter: var(--bgf#{$breakpoint})
-    }
-
-    [style*="--bdf-hvr#{$breakpoint}:"]:hover,
-    [style*="--bdf-hvr#{$breakpoint}:"]:focus {
-        backdrop-filter: var(--bdf-hvr#{$breakpoint})
-    }
 }

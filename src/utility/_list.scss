@@ -1,5 +1,4 @@
 @mixin mixin-list-class() {
-
     .list-disc {
       list-style-type: disc;
     }
@@ -7,23 +6,18 @@
     .list-decimal {
       list-style-type: decimal;
     }
-}
 
-@mixin mixin-list($breakpoint: null) {
-
-    [style*="--lis#{$breakpoint}:"] {
-      list-style: var(--lis#{$breakpoint})
+    .list-none,
+    .list-inline {
+        padding-left: 0;
+        list-style: none
     }
 
-    [style*="--lisp#{$breakpoint}:"] {
-      list-style-position: var(--lisp#{$breakpoint})
+    .list-inline > li {
+        display: inline-block
     }
 
-    [style*="--list#{$breakpoint}:"] {
-      list-style-type: var(--list#{$breakpoint})
-    }
-
-    [style*="--lisi#{$breakpoint}:"] {
-      list-style-image: var(--lisi#{$breakpoint})
+    .list-inside {
+        list-style-position: inside
     }
 }

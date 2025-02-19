@@ -1,13 +1,19 @@
 .form-select {
-    --arrow-position: 10%;
+    --arrow-position: .5rem;
     @extend %form-input-default;
-    padding: .5rem 1.5rem .5rem .75rem;
+    padding: .5rem 2rem .5rem .75rem;
     field-sizing: content;
 }
 
 .form-select:not([multiple], [size]) {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z'/%3E%3C/svg%3E");
     background-position: center right var(--arrow-position);
-    background-size: 1rem auto;
+    background-size: 1.25rem auto;
     background-repeat: no-repeat;
+}
+
+.form-select-circle {
+    --arrow-position: .75rem;
+    padding: .5rem 2.25rem .5rem 1rem;
+    border-radius: 60rem;
 }

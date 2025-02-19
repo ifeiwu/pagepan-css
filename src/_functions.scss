@@ -1,34 +1,25 @@
-@use "sass:list";
-
 @function px-to-rem($pxs) {
     $rems: ();
-
     @each $px in $pxs {
-        $rems: list.append($rems, calc($px / 16) * 1rem)
+        $rems: append($rems, ($px / 16) * 1rem)
     }
-
     @return $rems
 };
 
 @function rem-to-px($rems) {
     $pxs: ();
-
     @each $rem in $rems {
-        $pxs: list.append($pxs, calc($rem * 16))
+        $pxs: append($pxs, $rem * 16)
     }
-
     @return $pxs
 };
-
 
 @function rgba-to-hex($rgba, $opacity: 0, $background: #fff) {
     @if $opacity >0 {
         @if $opacity < 1 {
             $opacity: $opacity * 100
         }
-
         @return mix(mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%), rgb(255, 255, 255), $opacity)
     }
-
     @return mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%)
 };
