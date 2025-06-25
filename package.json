@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "source": [
         "src/pagepan.scss",
-        "src/pagepan-base-not-layer.scss",
+        "src/pagepan-polyfill.scss",
         "src/pageyun.scss"
     ],
     "browserslist": "> 0.5%, last 20 versions, not dead",
